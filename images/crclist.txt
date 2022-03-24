@@ -1,0 +1,9 @@
+CRC-LIST
+oem_misc1 0xab54d286
+preloader 0xaa20cc40
+dtbo 0x3d000a6b
+logo 0x99fef4e
+cache 0xf3dcebbe
+boot 0xdc4e81d2
+exaid 0xab54d286
+gsort 0xab54d286

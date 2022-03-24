@@ -1,0 +1,5 @@
+SPARSECRC-LIST
+vendor 0x7e3696c6 10
+cust 0xe5c7090c 6
+userdata 0xcb0cf4b9 11
+system 0xb7d66688 27
