@@ -1,5 +1,10 @@
 @echo off
-title MIUI 12.5.7 Firmware Only
+title MIUI 12.5.7 Firmware (Merged with 12.5.1)
+@echo 12.5.1 Firmware Merged with 12.5.7 OTA Update
+@echo No System Image Included
+@echo OrangeFox Recovery Included (Dynamic)
+@echo Flash 12.5 Base Custom ROM and Kernel (R-Oss only)
+@echo CRC is omitted on some firmware images
 
 fastboot %* flash crclist %~dp0images\crclist.txt 
 fastboot %* flash sparsecrclist %~dp0images\sparsecrclist.txt 
@@ -29,7 +34,11 @@ fastboot %* flash cam_vpu3  %~dp0images\cam_vpu3.img
 fastboot %* flash audio_dsp %~dp0images\audio_dsp.img 
 fastboot %* flash cache     %~dp0images\cache.img      
 fastboot %* flash recovery  %~dp0images\recovery.img    
+@echo Patching Vbmeta
 fastboot %* flash vbmeta    %~dp0images\vbmeta.img --disable-verity --disable-verification 
+@echo Formatting User Data
+fastboot %* -w
+@echo Rebooting to Recovery...
 fastboot %* reboot recovery
 
 @echo Modded by Jericho@BegoniaPhilippines 
